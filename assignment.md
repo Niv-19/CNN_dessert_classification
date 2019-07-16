@@ -1,6 +1,6 @@
 ## Transfer learning assignment
 
-Hi folks. Today we're going to be training a convnet to recognize monkey species using transfer learning, then comparing it to a simple convnet. This exercise is quite memory and CPU intensive so try to close any unnecessary programs before you begin.
+Hi folks. Today we're going to be training a convnet to recognize desserts using transfer learning, then comparing it to a simple convnet. This exercise is quite memory and CPU intensive so try to close any unnecessary programs before you begin.
 
 #### Step 1: Data
 Inspect the data/ folder. To make it easy to load images into Keras, it's been split into a training and validation folders, with an additional holdout set to evaluate model performance at the end.
