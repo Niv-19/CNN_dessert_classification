@@ -5,9 +5,9 @@ Hi folks. Today we're going to be training a convnet to recognize desserts using
 #### Step 1: Data
 Inspect the data/ folder. To make it easy to load images into Keras, it's been split into a training and validation folders, with an additional holdout set to evaluate model performance at the end.
 
-#### Step 2: Simple CNN
-1. Using the create_model function in simple_cnn.py (this is the same CNN you built yesterday), create a keras model. Use 100x100x3 (100 pixels square with channels for RGB) as the input size while testing to save time, but we will increase this later
-2. Yesterday, we used model.fit() to run the model. However, the fit() method will load all of your data into memory, which is generally unusable for large datasets. To deal with this, we'll be using data generators, which load data on the fly. The keras ImageDataGenerator also makes it very easy to implement data augmentation, which we can use to increase our validation accuracy.  
+#### Step 2: Simple ConvNet
+1. Using the create_model function in simple_cnn.py (this is the same ConvNet you built yesterday), create a keras model. Use 100x100x3 (100 pixels square with channels for RGB) as the input size while testing to save time, but we will increase this later
+2. Previously, we used model.fit() to run the model. However, the fit() method will load all of your data into memory, which is generally unusable for large datasets. To deal with this, we'll be using data generators, which load data on the fly. The keras ImageDataGenerator also makes it very easy to implement data augmentation, which we can use to increase our validation accuracy.  
 Make two image data generators: one for training data and one for validation. for both, use the Xception preprocessor, which performs a couple quick scaling and transformation operations.  
 
 ```python
@@ -38,7 +38,7 @@ You can make a holdout_generator with validation_datagen.flow_from_directory and
 ```python
 metrics = best_model.evaluate_generator(<your code here>)
 ```
-##### Checkpoint 1: Congratulations! You just created a very practical set-up for modeling with a CNN, where you can read in large datasets with ease, save the best models and monitor the progress on a tensorboard!
+##### Checkpoint 1: Congratulations! You just created a very practical set-up for modeling with a ConvNet, where you can read in large datasets with ease, save the best models and monitor the progress on a tensorboard!
 
 #### Step 2: Transfer Model
 
@@ -50,7 +50,7 @@ metrics = best_model.evaluate_generator(<your code here>)
 
 4. After a few warmup epochs, unfreeze the 14th convolutional block onward, recompile and continue training, again with a low learning rate or an adaptive optimizer.
 
-5. Evaluate your performance on with the transfer model. Is it better than the simple CNN?
+5. Evaluate your performance on with the transfer model. Is it better than the simple ConvNet?
 
 6. Play around with different hyperparameters, optimizers and even base models (try mobilenet, etc.)
 
